@@ -46,29 +46,29 @@ const functions = [
     options: ['\\dfrac{1}{1 + x^2}', '\\dfrac{1}{1 - x^2}', '\\dfrac{1}{\\sqrt{1 + x^2}}', '\\dfrac{x}{1 + x^2}', '\\dfrac{x^2}{1 + x^2}']
   },
   {
-    question: '\\arccsc(x)',
+    question: '\\csc^{-1}(x)',
     correct: '-\\dfrac{1}{|x| \\sqrt{x^2 - 1}}',
     options: ['-\\dfrac{1}{|x| \\sqrt{x^2 - 1}}', '\\dfrac{1}{|x| \\sqrt{x^2 - 1}}', '-\\dfrac{1}{\\sqrt{x^2 - 1}}', '\\dfrac{1}{x^2 - 1}', '\\dfrac{1}{\\sqrt{x^2 - 1}}']
   },
   {
-    question: '\\arcsec(x)',
+    question: '\\sec^{-1}(x)',
     correct: '\\dfrac{1}{|x| \\sqrt{x^2 - 1}}',
     options: ['\\dfrac{1}{|x| \\sqrt{x^2 - 1}}', '-\\dfrac{1}{|x| \\sqrt{x^2 - 1}}', '\\dfrac{1}{\\sqrt{x^2 + 1}}', '\\dfrac{1}{|x| \\sqrt{1 - x^2}}', '-\\dfrac{x}{\\sqrt{x^2 - 1}}']
   },
   {
-    question: '\\arccot(x)',
+    question: '\\cot^{-1}(x)',
     correct: '-\\dfrac{1}{1 + x^2}',
     options: ['-\\dfrac{1}{1 + x^2}', '\\dfrac{1}{1 + x^2}', '\\dfrac{1}{1 - x^2}', '-\\dfrac{x}{1 + x^2}', '\\dfrac{x}{1 + x^2}']
   },
   {
     question: 'e^x',
     correct: 'e^x',
-    options: ['e^x', 'xe^x', 'x', '1', 'e']
+    options: ['e^x', 'xe^x', 'x', 'xe^{x-1}', 'e']
   },
   {
     question: '2^x',
     correct: '2^x \\ln(2)',
-    options: ['2^x \\ln(2)', 'x2^x', '2^x \\cdot 2', '\\ln(x)', 'x^2 \\cdot \\ln(2)']
+    options: ['2^x \\ln(2)', 'x\\cdot 2^x', '2^x \\cdot 2', '\\ln(x)', 'x^2 \\cdot \\ln(2)']
   },
   {
     question: '3^x',
@@ -78,7 +78,7 @@ const functions = [
   {
     question: '\\ln(x)',
     correct: '\\dfrac{1}{x}',
-    options: ['\\dfrac{1}{x}', '\\dfrac{1}{\\ln(x)}', '\\ln(x)', '\\ln(x^2)', '\\dfrac{x}{x^2}']
+    options: ['\\dfrac{1}{x}', '\\dfrac{1}{\\ln(x)}', '\\ln(x)', '\\ln(x^2)', '\\dfrac{1}{x \\ln(x)}']
   },
   {
     question: '\\ln(3x)',
@@ -112,8 +112,8 @@ const functions = [
   },
   {
     question: '5^{x^2}',
-    correct: '2x 5^{x^2} \\ln(5)',
-    options: ['2x 5^{x^2} \\ln(5)', '5^{x^2}', '2x^2 \\ln(5)', '5^{x} \\ln(x)', 'x5^{x^2}']
+    correct: '2x \\cdot 5^{x^2} \\ln(5)',
+    options: ['2x \\cdot 5^{x^2} \\ln(5)', '5^{x^2}', '2x^2 \\ln(5)', '5^{x} \\ln(x)', 'x\\cdot 5^{x^2}']
   },
   {
     question: '\\ln(\\sqrt{x})',
