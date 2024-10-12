@@ -186,4 +186,6 @@ function checkAnswer(selectedOption, correctAnswer) {
   setTimeout(setupQuestion, 2000);
 }
 
-setupQuestion();
+window.onload = function() {
+  setupQuestion(); // Ensure the game starts after everything is loaded
+}
