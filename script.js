@@ -180,7 +180,7 @@ function checkAnswer(selectedOption, correctAnswer) {
   scoreSheet.appendChild(row);
 
   if (scoreSheet.rows.length > 6) {
-    scoreSheet.deleteRow(1);  // Keep the header, delete the top data row
+    scoreSheet.deleteRow(0);  // Keep the header, delete the top data row
   }
 
   setTimeout(setupQuestion, 2000);
