@@ -144,7 +144,10 @@ function generateOptions(correctAnswer, allOptions) {
     optionsContainer.appendChild(button);
   });
 
-  MathJax.typesetPromise();  // Re-render MathJax for the new content
+  // Ensure MathJax processes LaTeX after content is added
+  MathJax.typesetPromise().then(() => {
+    console.log('MathJax re-typeset completed for options');
+  }).catch((err) => console.log('MathJax typeset failed:', err));
 }
 
 function checkAnswer(selectedOption, correctAnswer) {
