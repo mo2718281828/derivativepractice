@@ -1,5 +1,160 @@
 
 const functions = [
+    {
+    question: '\\sin(3x^2)',
+    correct: '6x \\cdot \\cos(3x^2)',
+    options: ['6x \\cdot \\cos(3x^2)', '3\\sin(3x)', '6x \\cdot \\sin(3x^2)', '3x^2 \\cdot \\cos(3x^2)', '6x \\cdot \\sin(3x)']
+  },
+  {
+    question: 'e^{x^3}',
+    correct: '3x^2 e^{x^3}',
+    options: ['3x^2 e^{x^3}', 'e^{x^2}', 'x^3 e^x', '3xe^{x^3}', 'e^{x^3}']
+  },
+  {
+    question: '\\ln(5x^2 + 3)',
+    correct: '\\dfrac{10x}{5x^2 + 3}',
+    options: ['\\dfrac{10x}{5x^2 + 3}', '\\dfrac{5}{5x^2 + 3}', '10x', '\\dfrac{1}{5x^2 + 3}', '\\dfrac{10x}{x^2}']
+  },
+  {
+    question: 'e^{2x^3 + 1}',
+    correct: '6x^2 e^{2x^3 + 1}',
+    options: ['6x^2 e^{2x^3 + 1}', 'e^{2x^3 + 1}', '2x^3 e^x', '2xe^{2x^3 + 1}', '6x e^{2x^3}']
+  },
+  {
+    question: '\\cos(4x^2)',
+    correct: '-8x \\sin(4x^2)',
+    options: ['-8x \\sin(4x^2)', '8x \\cos(4x^2)', '4x \\sin(4x^2)', '-4x^2 \\cos(x)', '-4\\sin(4x^2)']
+  },
+  {
+    question: '\\tan(3x^2 + 1)',
+    correct: '6x \\sec^2(3x^2 + 1)',
+    options: ['6x \\sec^2(3x^2 + 1)', '\\sec^2(3x^2 + 1)', '3\\sec^2(x)', '2x \\sec^2(3x^2 + 1)', '6x \\tan(3x^2 + 1)']
+  },
+  {
+    question: '\\sqrt{x^2 + 4}',
+    correct: '\\dfrac{x}{\\sqrt{x^2 + 4}}',
+    options: ['\\dfrac{x}{\\sqrt{x^2 + 4}}', '\\dfrac{2x}{\\sqrt{x^2 + 4}}', '\\dfrac{1}{\\sqrt{x^2 + 4}}', '\\dfrac{2}{\\sqrt{x^2 + 4}}', '2\\sqrt{x^2 + 4}']
+  },
+  {
+    question: '\\sin^2(2x)',
+    correct: '4\\sin(2x) \\cdot \\cos(2x)',
+    options: ['4\\sin(2x) \\cdot \\cos(2x)', '2\\sin(2x) \\cdot \\cos(x)', '2\\sin(2x)', '\\sin^2(x) \\cdot \\cos(2x)', '4\\cos^2(2x)']
+  },
+  {
+    question: 'e^{\\sin(x)}',
+    correct: 'e^{\\sin(x)} \\cdot \\cos(x)',
+    options: ['e^{\\sin(x)} \\cdot \\cos(x)', '\\sin(x) \\cdot e^x', 'e^{x} \\cdot \\cos(x)', 'e^{\\cos(x)} \\cdot \\sin(x)', 'e^{x}']
+  },
+  {
+    question: '\\ln(x^4 + 1)',
+    correct: '\\dfrac{4x^3}{x^4 + 1}',
+    options: ['\\dfrac{4x^3}{x^4 + 1}', '\\dfrac{1}{x^4 + 1}', '\\dfrac{4}{x^4 + 1}', '4x^3 \\cdot \\ln(x)', '\\dfrac{4x^2}{x^4 + 1}']
+  },
+  {
+    question: 'e^{5x^2 + x}',
+    correct: 'e^{5x^2 + x} \\cdot (10x + 1)',
+    options: ['e^{5x^2 + x} \\cdot (10x + 1)', 'e^{5x^2 + x}', '5e^x', '5xe^{5x^2 + x}', 'e^{x^2 + x} \\cdot (10x + 1)']
+  },
+  {
+    question: '\\sec(2x^3)',
+    correct: '6x^2 \\sec(2x^3) \\cdot \\tan(2x^3)',
+    options: ['6x^2 \\sec(2x^3) \\cdot \\tan(2x^3)', '6x \\sec(2x^3)', '2x^3 \\sec(2x)', '\\tan(2x^3)', '6\\sec(x^3)']
+  },
+  {
+    question: '\\arcsin(4x)',
+    correct: '\\dfrac{4}{\\sqrt{1 - 16x^2}}',
+    options: ['\\dfrac{4}{\\sqrt{1 - 16x^2}}', '\\dfrac{1}{\\sqrt{1 - 16x^2}}', '\\dfrac{4x}{\\sqrt{1 - 4x^2}}', '\\dfrac{4}{1 - 4x^2}', '\\dfrac{16x}{\\sqrt{1 - 4x^2}}']
+  },
+  {
+    question: '\\arctan(3x^2)',
+    correct: '\\dfrac{6x}{1 + 9x^4}',
+    options: ['\\dfrac{6x}{1 + 9x^4}', '\\dfrac{6x}{1 + x^4}', '\\dfrac{6x}{1 + 9x^2}', '\\dfrac{3x}{1 + 9x^2}', '\\dfrac{6x}{1 + x^2}']
+  },
+  {
+    question: '\\cos(\\sqrt{x})',
+    correct: '-\\dfrac{\\sin(\\sqrt{x})}{2\\sqrt{x}}',
+    options: ['-\\dfrac{\\sin(\\sqrt{x})}{2\\sqrt{x}}', '-\\dfrac{\\sin(\\sqrt{x})}{\\sqrt{x}}', '\\dfrac{\\cos(\\sqrt{x})}{2\\sqrt{x}}', '-\\dfrac{\\cos(\\sqrt{x})}{2\\sqrt{x}}', '\\dfrac{\\cos(\\sqrt{x})}{x}']
+  },
+  {
+    question: '\\cos(5x^3)',
+    correct: '-15x^2 \\cdot \\sin(5x^3)',
+    options: ['-15x^2 \\cdot \\sin(5x^3)', '15x^2 \\cdot \\cos(5x^3)', '-5x^2 \\cdot \\sin(5x^3)', '5x \\cdot \\cos(5x^3)', '-x^2 \\cdot \\sin(5x^3)']
+  },
+  {
+    question: 'e^{x^4}',
+    correct: '4x^3 \\cdot e^{x^4}',
+    options: ['4x^3 \\cdot e^{x^4}', 'x^4 \\cdot e^x', 'e^{x^4}', '4xe^{x^4}', 'x^3 \\cdot e^{4x^3}']
+  },
+  {
+    question: '\\ln(4x^2 + 1)',
+    correct: '\\dfrac{8x}{4x^2 + 1}',
+    options: ['\\dfrac{8x}{4x^2 + 1}', '\\dfrac{4}{4x^2 + 1}', '\\dfrac{2x}{4x^2 + 1}', '\\dfrac{8}{x^2 + 1}', 'x^2 \\ln(4x^2 + 1)']
+  },
+  {
+    question: '\\sqrt{2x^3 + 5}',
+    correct: '\\dfrac{3x^2}{\\sqrt{2x^3 + 5}}',
+    options: ['\\dfrac{3x^2}{\\sqrt{2x^3 + 5}}', '\\dfrac{6x}{\\sqrt{2x^3 + 5}}', '3x \\sqrt{2x^3 + 5}', '\\dfrac{x^2}{\\sqrt{2x^3 + 5}}', '3x^2 \\sqrt{2x^3 + 5}']
+  },
+  {
+    question: '\\ln(2x^2 + 3)',
+    correct: '\\dfrac{4x}{2x^2 + 3}',
+    options: ['\\dfrac{4x}{2x^2 + 3}', '\\dfrac{4}{x^2 + 3}', '\\dfrac{2x}{2x^2 + 3}', '4 \\ln(2x^2 + 3)', '\\dfrac{x}{2x^2 + 3}']
+  },
+  {
+    question: 'x^2 \\cdot \\arcsin(x)',
+    correct: '2x \\arcsin(x) + \\dfrac{x^2}{\\sqrt{1 - x^2}}',
+    options: ['2x \\arcsin(x) + \\dfrac{x^2}{\\sqrt{1 - x^2}}', '2x \\arcsin(x) + \\dfrac{1}{\\sqrt{1 - x^2}}', 'x^2 \\arcsin(x)', '2x \\arcsin(x)', 'x \\arcsin(x) + \\dfrac{1}{\\sqrt{1 - x}}']
+  },
+  {
+    question: '\\cos(4x^2 + x)',
+    correct: '-(8x + 1) \\cdot \\sin(4x^2 + x)',
+    options: ['-(8x + 1) \\cdot \\sin(4x^2 + x)', '(4x^2 + 1) \\cdot \\sin(4x^2 + x)', '-4x \\cdot \\cos(4x^2 + x)', '8x \\cdot \\sin(4x^2 + x)', '8x \\cos(4x^2 + x)']
+  },
+  {
+    question: '5^{x^3 + 2x}',
+    correct: '(3x^2 + 2) \\cdot 5^{x^3 + 2x} \\ln(5)',
+    options: ['(3x^2 + 2) \\cdot 5^{x^3 + 2x} \\ln(5)', '5^{x^2 + x}', '3x^2 \\cdot 5^{x^2 + x} \\ln(5)', 'x \\cdot 5^{x^3 + 2x}', 'x^3 \\cdot 5^{x^2} \\ln(5)']
+  },
+  {
+    question: '\\arctan(7x^2)',
+    correct: '\\dfrac{14x}{1 + 49x^4}',
+    options: ['\\dfrac{14x}{1 + 49x^4}', '\\dfrac{7x}{1 + 49x^4}', '\\dfrac{14x}{1 + x^2}', '\\dfrac{1}{1 + 49x^4}', '\\dfrac{14x}{\\sqrt{1 + 49x^4}}']
+  },
+  {
+    question: '\\arcsin(4x)',
+    correct: '\\dfrac{4}{\\sqrt{1 - 16x^2}}',
+    options: ['\\dfrac{4}{\\sqrt{1 - 16x^2}}', '\\dfrac{1}{\\sqrt{1 - 4x^2}}', '\\dfrac{4}{\\sqrt{1 - 4x^2}}', '\\dfrac{4}{\\sqrt{1 + 16x^2}}', '\\dfrac{16}{\\sqrt{1 - 16x^2}}']
+  },
+  {
+    question: '\\cos(6x^2 + 2x)',
+    correct: '-(12x + 2) \\cdot \\sin(6x^2 + 2x)',
+    options: ['-(12x + 2) \\cdot \\sin(6x^2 + 2x)', '12x \\cdot \\sin(6x^2 + 2x)', '-6x^2 \\cdot \\cos(6x^2 + 2x)', '(12x + 2) \\cdot \\cos(6x^2 + 2x)', '-x^2 \\cdot \\sin(6x^2 + 2x)']
+  },
+  {
+    question: 'e^{5x^2 - 4x}',
+    correct: '(10x - 4) \\cdot e^{5x^2 - 4x}',
+    options: ['(10x - 4) \\cdot e^{5x^2 - 4x}', '5x \\cdot e^{5x^2 - 4x}', '2x \\cdot e^{5x^2 - 4x}', 'x^2 \\cdot e^{5x^2 - 4x}', '4 \\cdot e^{5x^2 - 4x}']
+  },
+  {
+    question: '\\ln(x^5 + 3x)',
+    correct: '\\dfrac{5x^4 + 3}{x^5 + 3x}',
+    options: ['\\dfrac{5x^4 + 3}{x^5 + 3x}', '\\dfrac{5x^4 + 3}{x^4 + 3}', '\\dfrac{5x^3 + 1}{x^5 + 3x}', '\\dfrac{4x + 3}{x^5 + x}', '5x^4 \\ln(x^5 + 3x)']
+  },
+  {
+    question: '\\ln(\\sin(x))',
+    correct: '\\dfrac{\\cos(x)}{\\sin(x)}',
+    options: ['\\dfrac{\\cos(x)}{\\sin(x)}', '-\\ln(\\sin(x))', '\\cos(x)', '\\dfrac{1}{\\sin(x)}', '-\\cos(x)']
+  },
+  {
+    question: 'e^{\\tan(x)}',
+    correct: 'e^{\\tan(x)} \\cdot \\sec^2(x)',
+    options: ['e^{\\tan(x)} \\cdot \\sec^2(x)', 'e^{x} \\cdot \\sec^2(x)', '\\tan(x) \\cdot e^x', 'e^{x} \\cdot \\sin(x)', 'e^{\\sin(x)} \\cdot \\tan(x)']
+  },
+  {
+    question: 'x^3 \\cdot e^{2x^2}',
+    correct: '6x^2 e^{2x^2} + 4x^4 e^{2x^2}',
+    options: ['6x^2 e^{2x^2} + 4x^4 e^{2x^2}', '3x^2 e^{2x^2}', 'x^3 e^{2x}', '4x^4 e^{2x^2}', '6x^2 e^{2x}']
+  },
   {
     question: '\\sin(x)',
     correct: '\\cos(x)',
