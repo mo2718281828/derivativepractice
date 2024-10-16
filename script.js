@@ -1,4 +1,3 @@
-
 const functions = [
     {
     question: '\\sin(3x^2)',
@@ -153,7 +152,7 @@ const functions = [
   {
     question: 'x^3 \\cdot e^{2x^2}',
     correct: '3x^2 e^{2x^2} + 4x^4 e^{2x^2}',
-    options: ['3x^2 e^{2x^2} + 4x^4 e^{2x^2}', '6x^2 e^{2x^2} + 4x^4 e^{2x^2}', '6x^2 e^{2x^2} + 4x^3 e^{2x^2}', '4x^4 e^{2x^2}', ''3x^2 e^{2x^2} + 4x^3 e^{2x^2}'']
+    options: ['3x^2 e^{2x^2} + 4x^4 e^{2x^2}', '6x^2 e^{2x^2} + 4x^4 e^{2x^2}', '6x^2 e^{2x^2} + 4x^3 e^{2x^2}', '4x^4 e^{2x^2}', '3x^2 e^{2x^2} + 4x^3 e^{2x^2}']
   },
   {
     question: '\\sin(x)',
@@ -373,10 +372,9 @@ const functions = [
 ];
 
 
-
-
 let score = 0;
 let previousFunction = null;
+let answered = false;
 
 function setupQuestion() {
   let currentFunction;
@@ -385,8 +383,9 @@ function setupQuestion() {
   } while (currentFunction === previousFunction);
 
   previousFunction = currentFunction;
-
-  document.getElementById('function').innerHTML = `\\(f(x)= ${currentFunction.question} \\)`;  // Use LaTeX format
+  answered = false;
+  document.getElementById('function').innerHTML = `\\( ${currentFunction.question} \\)`;
+  document.getElementById('nextQuestionBtn').style.display = 'none'; // Hide Next Question button
   MathJax.typesetPromise();  // Trigger MathJax rendering
 
   generateOptions(currentFunction.correct, currentFunction.options);
@@ -396,39 +395,40 @@ function generateOptions(correctAnswer, allOptions) {
   const optionsContainer = document.getElementById('options');
   optionsContainer.innerHTML = '';
 
-  const shuffledOptions = allOptions.sort(() => Math.random() - 0.5);  // Shuffle options
+  const shuffledOptions = allOptions.sort(() => Math.random() - 0.5);
 
   shuffledOptions.forEach(option => {
     const button = document.createElement('button');
-    button.innerHTML = `\\(${option}\\)`;  // Use LaTeX syntax for buttons
-    button.onclick = () => checkAnswer(option, correctAnswer);
+    button.innerHTML = `\\(${option}\\)`;
+    button.onclick = () => checkAnswer(option, correctAnswer, button);
     optionsContainer.appendChild(button);
   });
 
-  // Ensure MathJax processes LaTeX after content is added
-  MathJax.typesetPromise().then(() => {
-    console.log('MathJax re-typeset completed for options');
-  }).catch((err) => console.log('MathJax typeset failed:', err));
+  MathJax.typesetPromise();
 }
 
-function checkAnswer(selectedOption, correctAnswer) {
+function checkAnswer(selectedOption, correctAnswer, button) {
+  if (answered) return; // Prevent selecting multiple answers
+  answered = true;
+
   const scoreSheet = document.querySelector('#scoreSheet tbody');
   const row = document.createElement('tr');
   const answerCell = document.createElement('td');
   const changeCell = document.createElement('td');
   const scoreCell = document.createElement('td');
 
-  answerCell.innerHTML = `\\(${correctAnswer}\\)`;  // Use LaTeX format
-  MathJax.typesetPromise();  // Trigger MathJax rendering
+  answerCell.innerHTML = `\\(${correctAnswer}\\)`;
 
   if (selectedOption === correctAnswer) {
     score += 20;
     changeCell.textContent = '+20';
     changeCell.className = 'green';
+    button.style.backgroundColor = '#4CAF50';  // Correct answer highlight
   } else {
     score = Math.max(0, score - 5);
     changeCell.textContent = '-5';
     changeCell.className = 'red';
+    button.style.backgroundColor = 'red';  // Incorrect answer highlight
   }
 
   scoreCell.textContent = score;
@@ -440,13 +440,18 @@ function checkAnswer(selectedOption, correctAnswer) {
   row.appendChild(scoreCell);
   scoreSheet.appendChild(row);
 
-  if (scoreSheet.rows.length > 6) {
-    scoreSheet.deleteRow(0);  // Keep the header, delete the top data row
+  // Immediately render LaTeX in the "Correct Answer" column
+  MathJax.typesetPromise([answerCell]).then(() => {
+    console.log('MathJax typeset for the correct answer.');
+  }).catch(err => console.log('MathJax typesetting error:', err));
+
+  if (scoreSheet.rows.length > 10) {
+    scoreSheet.deleteRow(1);  // Keep the header, delete the top data row
   }
 
-  setTimeout(setupQuestion, 2000);
+  document.getElementById('nextQuestionBtn').style.display = 'inline';  // Show Next Question button
 }
 
-window.onload = function() {
-  setupQuestion(); // Ensure the game starts after everything is loaded
-}
+document.getElementById('nextQuestionBtn').addEventListener('click', setupQuestion);
+
+setupQuestion();
