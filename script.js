@@ -446,7 +446,7 @@ function checkAnswer(selectedOption, correctAnswer, button) {
   }).catch(err => console.log('MathJax typesetting error:', err));
 
   if (scoreSheet.rows.length > 6) {
-    scoreSheet.deleteRow(1);  // Keep the header, delete the top data row
+    scoreSheet.deleteRow(0);  // Keep the header, delete the top data row
   }
 
   document.getElementById('nextQuestionBtn').style.display = 'inline';  // Show Next Question button
