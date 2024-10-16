@@ -152,8 +152,8 @@ const functions = [
   },
   {
     question: 'x^3 \\cdot e^{2x^2}',
-    correct: '6x^2 e^{2x^2} + 4x^4 e^{2x^2}',
-    options: ['6x^2 e^{2x^2} + 4x^4 e^{2x^2}', '3x^2 e^{2x^2}', 'x^3 e^{2x}', '4x^4 e^{2x^2}', '6x^2 e^{2x}']
+    correct: '3x^2 e^{2x^2} + 4x^4 e^{2x^2}',
+    options: ['3x^2 e^{2x^2} + 4x^4 e^{2x^2}', '6x^2 e^{2x^2} + 4x^4 e^{2x^2}', '6x^2 e^{2x^2} + 4x^3 e^{2x^2}', '4x^4 e^{2x^2}', ''3x^2 e^{2x^2} + 4x^3 e^{2x^2}'']
   },
   {
     question: '\\sin(x)',
