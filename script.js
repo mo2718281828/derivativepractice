@@ -445,7 +445,7 @@ function checkAnswer(selectedOption, correctAnswer, button) {
     console.log('MathJax typeset for the correct answer.');
   }).catch(err => console.log('MathJax typesetting error:', err));
 
-  if (scoreSheet.rows.length > 10) {
+  if (scoreSheet.rows.length > 6) {
     scoreSheet.deleteRow(1);  // Keep the header, delete the top data row
   }
 
