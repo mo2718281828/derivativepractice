@@ -1,4 +1,4 @@
-# https://mo2718281828.github.io/mo.derivativepractice.github.io
+# https://mo2718281828.github.io/derivativepractice
 
 Use this game to practice the most common derivative rules.
 
